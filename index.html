@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VroomGo – Car Rental in Palwal and Hodal</title>
+  <meta name="description" content="Rent a car in Palwal and Hodal. Choose your car and send your booking on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">VroomGo</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav id="menu" class="menu">
+        <a href="#fleet">Our fleet</a>
+        <a href="#why">Why us</a>
+        <a href="#how">How it works</a>
+        <a href="#contact">Contact</a>
+        <a href="#book" class="btn btn-accent">Book a car</a>
+      </nav>
+    </div>
+    <div class="container hero" id="top">
+      <h1>Pick up the keys.<br>Skip the hassle.</h1>
+      <p>Self-drive and with-driver cars in Palwal and Hodal. Send your booking on WhatsApp in under a minute.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- BOOKING FORM -->
+    <section id="book" class="container">
+      <form id="bookingForm" class="booking" novalidate>
+        <h2 class="sr-only">Book a car</h2>
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Full name" required>
+          <small class="error" id="err-name"></small>
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile number</label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" maxlength="10" required>
+          <small class="error" id="err-phone"></small>
+        </div>
+
+        <div class="field">
+          <label for="city">Pick-up location</label>
+          <select id="city" name="city" required>
+            <option value="">Select city</option>
+            <option>Palwal</option>
+            <option>Hodal</option>
+          </select>
+          <small class="error" id="err-city"></small>
+        </div>
+
+        <div class="field">
+          <label for="car">Car</label>
+          <select id="car" name="car" required></select>
+          <small class="error" id="err-car"></small>
+        </div>
+
+        <div class="field">
+          <label for="pickup">Pick-up date</label>
+          <input id="pickup" name="pickup" type="date" required>
+          <small class="error" id="err-pickup"></small>
+        </div>
+
+        <div class="field">
+          <label for="dropoff">Return date</label>
+          <input id="dropoff" name="dropoff" type="date" required>
+          <small class="error" id="err-dropoff"></small>
+        </div>
+
+        <div class="field">
+          <label for="mode">Driving option</label>
+          <select id="mode" name="mode">
+            <option>Self-drive</option>
+            <option>With driver</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="notes">Notes (optional)</label>
+          <input id="notes" name="notes" type="text" placeholder="Pick-up time, address, requests">
+        </div>
+
+        <div class="summary" id="summary" aria-live="polite">Choose a car and dates to see your estimated total.</div>
+
+        <button type="submit" class="btn btn-whatsapp">Send booking on WhatsApp</button>
+      </form>
+    </section>
+
+    <section id="fleet" class="container section">
+      <h2>Choose your ride</h2>
+      <p class="lead">Prices are per day. Final price is confirmed on WhatsApp.</p>
+      <div class="filters" id="filters" role="group" aria-label="Filter cars by type"></div>
+      <div class="grid" id="fleetGrid"></div>
+    </section>
+
+    <section id="why" class="dark">
+      <div class="container section">
+        <h2>Why rent with us</h2>
+        <div class="features">
+          <div>
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h3>Clear pricing</h3>
+            <p>You see the daily rate before you book. No surprise charges at pick-up.</p>
+          </div>
+          <div>
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.2-.6-.6-2.2z"/></svg></div>
+            <h3>Well-kept cars</h3>
+            <p>Every car is cleaned and checked before it goes out.</p>
+          </div>
+          <div>
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1"/><rect x="17" y="14" width="4" height="6" rx="1"/></svg></div>
+            <h3>Help on WhatsApp</h3>
+            <p>Message us any time you have a question about your booking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="container section">
+      <h2>Rent in three steps</h2>
+      <ol class="steps">
+        <li><span class="num">1</span><div><h3>Choose a car</h3><p>Pick a car and your dates in the form above.</p></div></li>
+        <li><span class="num">2</span><div><h3>Send on WhatsApp</h3><p>Your booking details open in WhatsApp, ready to send.</p></div></li>
+        <li><span class="num">3</span><div><h3>Pick up and go</h3><p>We confirm the price and meet you at the pick-up point.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="container cta-wrap">
+      <div class="cta">
+        <div>
+          <h2>Ready to hit the road?</h2>
+          <p>Message us on WhatsApp and we will reply with availability.</p>
+        </div>
+        <a id="waDirect" class="btn btn-dark" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="dark footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand">VroomGo</div>
+        <p>Palwal · Hodal</p>
+      </div>
+      <div>
+        <p>WhatsApp: <a id="waLink" href="#" target="_blank" rel="noopener">+91 99920 40175</a></p>
+        <p>&copy; <span id="year"></span> VroomGo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
